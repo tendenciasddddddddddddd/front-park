@@ -19,20 +19,20 @@
                         <img src="img/brand/alogo_gpc.png" style="width: 200px;" class="img-fluid">
                         <p class="lead text-white mt-4 mb-5">Empieza a explorar las rutas y vistas del ecoparque atravez de realidad virtual.</p>
                         <div class="btn-wrapper">
-                            <button tag="a"
-                                         href="https://demos.creative-tim.com/vue-argon-design-system/documentation"
+                            <router-link to="/paseo"
+                                        
                                          class="btn mb-3 mb-sm-0 btn-icon btn-info"
                                          type="info"
                                          icon="fa fa-code">
                                Rutas
-                            </button>
-                            <base-button tag="a"
-                                         href="https://www.creative-tim.com/product/vue-argon-design-system"
+                            </router-link>
+                            <router-link to="/maps"
+                                        
                                          class="btn mb-3 mb-sm-0 btn-icon btn-white"
                                          type="white"
                                          icon="ni ni-cloud-download-95">
                                Ubicación
-                            </base-button>
+                            </router-link>
                         </div>
                     </div>
                 </div>

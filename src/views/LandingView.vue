@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <div class="position-relative">
             <!-- shape Hero -->
             <section class="section-shaped my-0">
@@ -15,23 +14,13 @@
                     <span></span>
                     <span></span>
                 </div>
-                <div class="container mt-6">
-                    <br/>
-                     <br/>
-                      <br/>
-                       <br/>
-                     <Unity :unity="unityContext" width="1050px" height="600px" />
+                <div class=" shape-container d-flex " style="    margin-top: -170px;">
+
+                     <!-- <Unity :unity="unityContext" width="100%" height="600px" /> -->
                 </div>
             </section>
             <!-- 1st Hero Variation -->
         </div>
-      
-       
-     
-       
-       
-      
-
     </div>
 </template>
 
@@ -47,7 +36,7 @@ const Unity = new UnityWebgl({
 })
 export default {
   name: "LandingView",
-  components: {Unity: UnityWebgl.vueComponent },
+  //components: {Unity: UnityWebgl.vueComponent },
   data() {
     return {
       unityContext: Unity

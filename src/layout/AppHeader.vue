@@ -29,10 +29,11 @@
                         <i class="ni ni-collection d-lg-none"></i>
                         <span class="nav-link-inner--text">Páginas</span>
                     </a>
-                    <router-link to="/landing" class="dropdown-item">Inicio</router-link>
-                    <router-link to="/profile" class="dropdown-item">Paseo Virtual</router-link>
-                    <router-link to="/login" class="dropdown-item">Ubicación</router-link>
-                    <router-link to="/register" class="dropdown-item">Pefil</router-link>
+                    <router-link to="/" class="dropdown-item">Inicio</router-link>
+                    <router-link to="/paseo" class="dropdown-item">Paseo Virtual</router-link>
+                    <router-link to="/maps" class="dropdown-item">Ubicación</router-link>
+                    <router-link to="/profile" class="dropdown-item">Pefil</router-link>
+                     <router-link to="/user-list" class="dropdown-item">Usuarios</router-link>
                 </base-dropdown>
             </ul>
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
@@ -57,7 +58,9 @@
                         <span class="nav-link-inner--text d-lg-none">Twitter</span>
                     </a>
                 </li>
-               
+                <li class="nav-item" style="color: white;">
+                    {{nombre}}
+                </li>
                 <li class="nav-item d-none d-lg-block ml-lg-4">
                     <a @click="logout" href="javascript:;"  rel="noopener"
                        class="btn btn-neutral btn-icon">
@@ -82,6 +85,12 @@ export default {
     CloseButton,
     BaseDropdown
   },
+  data(){
+      return{
+          nombre: '',
+          image: '',
+      }
+  },
   methods: {
     logout() {
       localStorage.clear();
@@ -89,6 +98,15 @@ export default {
       this.$router.push("/").catch(()=>{});
       //window.location.reload(true);
     },
+     inforUsers(){
+      const info = JSON.parse(localStorage.getItem('Xf'));
+      const avatar = JSON.parse(localStorage.getItem('Avatar'));
+      this.image= avatar;
+      this.nombre= info.nombre;
+    },
+  },
+  created() {
+    this.inforUsers();
   }
 };
 </script>

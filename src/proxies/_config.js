@@ -34,7 +34,7 @@ Axios.interceptors.response.use(
     }
   );
 
-let url = 'http://localhost:3000'; 
+let url = 'http://localhost:4000/api'; 
 
 export default{
     identityProxy: new IdentityProxy(Axios, url),

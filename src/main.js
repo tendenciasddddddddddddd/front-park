@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import toasted from "vue-toasted";
 
+import GAuth from 'vue-google-oauth2'
 
 import "@/assets/vendor/nucleo/css/nucleo.css";
 import "@/assets/vendor/font-awesome/css/font-awesome.css";
@@ -25,6 +26,14 @@ Vue.use({
     })
   }
 })
+
+const gauthOption = {
+  clientId: '776329604046-ftt9eq502a2soskkg2geecdrnspmenl3.apps.googleusercontent.com',
+  scope: 'profile email',
+  prompt: 'consent',
+  fetch_basic_profile : true,
+}
+Vue.use(GAuth, gauthOption)
 
 Vue.use({
   install(Vue){
@@ -49,7 +58,7 @@ Vue.use({
                  roles : user.role,
                  name : user.name,
             };
-            //console.log(user)
+            console.log(user)
         }
       }
     })
